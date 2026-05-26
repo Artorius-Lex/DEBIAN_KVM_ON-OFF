@@ -36,8 +36,8 @@ def launch_app(command):
         )
     except FileNotFoundError:
         return False, f"Befehl nicht gefunden: {command[0]}"
-    except Exception as exc:
-        return False, str(exc)
+    except Exception:
+        return False, "Unerwarteter Fehler beim Starten der Anwendung."
 
     return True, ""
 
