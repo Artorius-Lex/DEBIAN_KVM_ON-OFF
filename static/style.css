@@ -1,0 +1,131 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #1a2238, #0b0f1a 60%);
+  color: #f2f4f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+.app {
+  width: min(900px, 100%);
+  background: rgba(12, 16, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+}
+
+header p {
+  margin: 0 0 24px;
+  color: #c7ccda;
+}
+
+.status-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.status-label {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #9aa4bd;
+}
+
+.status-value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.button-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-bottom: 24px;
+}
+
+.action-button {
+  padding: 24px;
+  border: none;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+  min-height: 88px;
+}
+
+.action-button.docker {
+  background: linear-gradient(135deg, #0077ff, #00c2ff);
+  box-shadow: 0 12px 30px rgba(0, 134, 255, 0.35);
+}
+
+.action-button.vbox {
+  background: linear-gradient(135deg, #6b4bff, #b447ff);
+  box-shadow: 0 12px 30px rgba(154, 86, 255, 0.35);
+}
+
+.action-button:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+.action-button:active {
+  transform: translateY(1px);
+}
+
+.action-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  transform: none;
+  box-shadow: none;
+}
+
+.message {
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+.message.hidden {
+  display: none;
+}
+
+.message.success {
+  background: rgba(40, 200, 128, 0.15);
+  border: 1px solid rgba(40, 200, 128, 0.35);
+  color: #8ef2c2;
+}
+
+.message.error {
+  background: rgba(255, 88, 88, 0.15);
+  border: 1px solid rgba(255, 88, 88, 0.35);
+  color: #ffb7b7;
+}
+
+.message.info {
+  background: rgba(0, 179, 255, 0.12);
+  border: 1px solid rgba(0, 179, 255, 0.35);
+  color: #8bd5ff;
+}

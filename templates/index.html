@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docker / VirtualBox Umschalter</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <h1>Docker / VirtualBox Umschalter</h1>
+        <p>Starte den gewünschten Hypervisor mit einem Klick.</p>
+      </header>
+
+      <section class="status-card">
+        <span class="status-label">Status</span>
+        <span id="statusValue" class="status-value">Status lädt...</span>
+      </section>
+
+      <section class="button-grid">
+        <button id="dockerButton" class="action-button docker">
+          Docker Desktop starten
+        </button>
+        <button id="vboxButton" class="action-button vbox">
+          VirtualBox starten
+        </button>
+      </section>
+
+      <section id="message" class="message hidden"></section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
