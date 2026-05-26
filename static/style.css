@@ -1,0 +1,96 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #1f2937, #0b1020 65%);
+  color: #e5e7eb;
+}
+
+.app {
+  width: min(760px, 92vw);
+  background: rgba(17, 24, 39, 0.85);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.status {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #93c5fd;
+}
+
+.actions {
+  display: grid;
+  gap: 1rem;
+}
+
+.action-btn {
+  width: 100%;
+  min-height: 88px;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e5e7eb;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+.action-btn:last-child {
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+}
+
+.action-btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  filter: brightness(1.07);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.45);
+}
+
+.action-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.message {
+  min-height: 1.6em;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.error {
+  min-height: 84px;
+  margin-top: 0.6rem;
+  padding: 0.8rem;
+  white-space: pre-wrap;
+  border-radius: 10px;
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  background: rgba(127, 29, 29, 0.35);
+  color: #fecaca;
+}
+
+.error:empty {
+  display: none;
+}
