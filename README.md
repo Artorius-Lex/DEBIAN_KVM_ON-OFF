@@ -25,6 +25,27 @@ Alternativ nur Flask direkt installieren:
 pip install Flask
 ```
 
+## Installer (Desktop-Icon)
+
+Der Installer erstellt ein Desktop-Icon, zeigt vorab eine Zustimmung an (Zenity falls vorhanden, sonst Terminal) und kopiert die App nach `~/.local/share/debian-kvm-on-off`.
+
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+Hinweise:
+- Abhängigkeiten werden mit `pip --user` installiert.
+- Das Desktop-Icon liegt unter `~/.local/share/applications/debian-kvm-on-off.desktop`.
+- Das Icon wird nach `~/.local/share/icons/debian-kvm-on-off.svg` kopiert.
+
+Deinstallieren:
+```bash
+rm -rf ~/.local/share/debian-kvm-on-off
+rm -f ~/.local/share/applications/debian-kvm-on-off.desktop
+rm -f ~/.local/share/icons/debian-kvm-on-off.svg
+```
+
 ## Start
 
 ```bash
