@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KVM / VirtualBox Umschalter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <main class="app">
+      <h1>KVM / VirtualBox Umschalter</h1>
+      <p id="status" class="status">Status: Lädt ...</p>
+
+      <div class="actions">
+        <button id="dockerBtn" class="action-btn">Docker Desktop starten</button>
+        <button id="vboxBtn" class="action-btn">VirtualBox starten</button>
+      </div>
+
+      <p id="message" class="message" aria-live="polite"></p>
+      <pre id="error" class="error" aria-live="assertive"></pre>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
