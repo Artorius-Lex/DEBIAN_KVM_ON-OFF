@@ -2,6 +2,8 @@
 
 Kleine Flask-Webanwendung für Debian, um zwischen Docker/KVM und VirtualBox umzuschalten.
 
+Zielplattform: Debian 13 mit Python 3.13 (oder neuer).
+
 ## Dateien
 
 - `app.py`
@@ -21,6 +23,7 @@ git clone https://github.com/Artorius-Lex/DEBIAN_KVM_ON-OFF.git
 cd DEBIAN_KVM_ON-OFF
 ```
 
+Hinweis: Der korrekte Befehl ist `git clone …` (nicht `git ssh …`).
 Option B (ZIP-Download):
 
 1. Öffne die GitHub-Seite: https://github.com/Artorius-Lex/DEBIAN_KVM_ON-OFF
@@ -42,24 +45,16 @@ sudo apt update
 sudo apt install python3-venv python3-pip
 ```
 
-Falls du Python 3.13 nutzt:
-
-```bash
-sudo apt install python3.13-venv
-```
-
 ```bash
 cd /pfad/zum/DEBIAN_KVM_ON-OFF
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python3 -m pip install -r requirements.txt
 ```
 
-Alternativ nur Flask direkt installieren:
+Hinweis für Debian 13 (PEP 668): Systemweite `pip`-Installationen sind blockiert. Verwende immer eine virtuelle Umgebung (`python3 -m venv`).
 
-```bash
-pip install Flask
-```
+Empfehlung: Installiere Abhängigkeiten immer in einer eigenen venv oder via Installer, niemals global via `pip`.
 
 ## Installer (Desktop-Icon)
 
@@ -71,7 +66,9 @@ chmod +x install.sh
 ```
 
 Hinweise:
-- Abhängigkeiten werden mit `pip --user` installiert.
+- Der Installer erstellt eine eigene virtuelle Umgebung unter `~/.local/share/debian-kvm-on-off/.venv`.
+- Fehlende Pakete (`python3-venv`, `python3-pip`) werden automatisch per `sudo apt` installiert.
+- Das Skript sollte **nicht** in einer aktivierten `.venv` laufen.
 - Das Desktop-Icon liegt unter `~/.local/share/applications/debian-kvm-on-off.desktop`.
 - Das Icon wird nach `~/.local/share/icons/debian-kvm-on-off.svg` kopiert.
 
@@ -81,6 +78,11 @@ rm -rf ~/.local/share/debian-kvm-on-off
 rm -f ~/.local/share/applications/debian-kvm-on-off.desktop
 rm -f ~/.local/share/icons/debian-kvm-on-off.svg
 ```
+
+## Fehlerbehebung (Debian 13)
+
+- `externally-managed-environment`: Nutze den Installer oder eine venv (kein `pip --user`).
+- `ensurepip is not available`: Installiere `python3-venv` (der Installer erledigt das automatisch).
 
 ## Start
 
