@@ -54,6 +54,20 @@ python3 app.py
 
 Danach öffnet sich die Anwendung automatisch im lokalen Browser unter `http://127.0.0.1:5000`.
 
+## Konsolenbefehle
+
+Docker/KVM einschalten:
+
+```bash
+sudo modprobe -r vboxdrv vboxnetflt vboxnetadp && sudo modprobe kvm_amd && docker-desktop
+```
+
+Docker/KVM ausschalten (VirtualBox):
+
+```bash
+sudo modprobe -r kvm_amd kvm && sudo modprobe vboxdrv && virtualbox
+```
+
 ## Hinweise
 
 - Die Buttons führen `modprobe`, `docker-desktop` und `virtualbox` über das Flask-Backend per `subprocess` aus.
