@@ -10,10 +10,46 @@ Kleine Flask-Webanwendung für Debian, um zwischen Docker/KVM und VirtualBox umz
 - `static/script.js`
 - `requirements.txt`
 
-## Installation
+## Download
+
+Option A (empfohlen, per Git):
 
 ```bash
-cd /home/runner/work/DEBIAN_KVM_ON-OFF/DEBIAN_KVM_ON-OFF
+sudo apt update
+sudo apt install git
+git clone https://github.com/Artorius-Lex/DEBIAN_KVM_ON-OFF.git
+cd DEBIAN_KVM_ON-OFF
+```
+
+Option B (ZIP-Download):
+
+1. Öffne die GitHub-Seite: https://github.com/Artorius-Lex/DEBIAN_KVM_ON-OFF
+2. Klicke auf **Code** → **Download ZIP**
+3. Entpacke die ZIP-Datei
+4. Wechsle in den Ordner:
+
+```bash
+unzip DEBIAN_KVM_ON-OFF-main.zip
+cd DEBIAN_KVM_ON-OFF-main
+```
+
+## Installation
+
+Voraussetzungen (Debian/Ubuntu):
+
+```bash
+sudo apt update
+sudo apt install python3-venv python3-pip
+```
+
+Falls du Python 3.13 nutzt:
+
+```bash
+sudo apt install python3.13-venv
+```
+
+```bash
+cd /pfad/zum/DEBIAN_KVM_ON-OFF
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
