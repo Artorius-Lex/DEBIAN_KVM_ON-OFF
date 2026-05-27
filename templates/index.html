@@ -11,6 +11,21 @@
       <h1>KVM / VirtualBox Umschalter</h1>
       <p id="status" class="status">Status: Lädt ...</p>
 
+      <div class="command-help">
+        <button type="button" class="help-btn" aria-label="Konsolenbefehle anzeigen">?</button>
+        <div class="help-tooltip" role="tooltip">
+          <p class="help-title">Konsolenbefehle</p>
+          <div class="help-section">
+            <span class="help-label">Docker/KVM einschalten</span>
+            <code>sudo modprobe -r vboxdrv vboxnetflt vboxnetadp && sudo modprobe kvm_amd && docker-desktop</code>
+          </div>
+          <div class="help-section">
+            <span class="help-label">Docker/KVM ausschalten (VirtualBox)</span>
+            <code>sudo modprobe -r kvm_amd kvm && sudo modprobe vboxdrv && virtualbox</code>
+          </div>
+        </div>
+      </div>
+
       <div class="actions">
         <button id="dockerBtn" class="action-btn">Docker Desktop starten</button>
         <button id="vboxBtn" class="action-btn">VirtualBox starten</button>
